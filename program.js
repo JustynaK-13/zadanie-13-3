@@ -9,11 +9,9 @@ process.stdin.on('readable', function() {
         	case 'version':
         		console.log(process.versions);
         		break;
-
         	case '/exit':
         		console.log('Quitting app!\n');
         		break;
-
         	default:
                 console.log('Wrong instruction!\n');
         }      
