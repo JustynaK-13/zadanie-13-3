@@ -5,11 +5,17 @@ process.stdin.on('readable', function() {
     var input = process.stdin.read();
     if (input !== null) {
         var instruction = input.toString().trim();
-        if (instruction === '/exit') {
-            process.stdout.write('Quitting app!\n');
-            process.exit();
-        } else {
-            process.stderr.write('Wrong instruction!\n');
-        }
+        switch(instruction) {
+        	case 'version':
+        		console.log(process.versions);
+        		break;
+
+        	case '/exit':
+        		console.log('Quitting app!\n');
+        		break;
+
+        	default:
+                console.log('Wrong instruction!\n');
+        }      
     }
 });
